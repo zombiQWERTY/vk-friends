@@ -1,0 +1,26 @@
+node_modules/
+dist/
+distForReplace/
+coverage/
+build/
+
+.idea
+.DS_Store
+npm-debug.log
+
+doc/
+uploads?
+public/uploads?/*
+tmp/
+
+
+syntax: glob
+
+frontend/public/assets
+*.heapsnapshot
+*.log
+/public
+/log/
+
+syntax: regexp
+^config/.*\.json$
