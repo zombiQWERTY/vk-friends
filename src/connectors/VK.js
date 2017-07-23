@@ -8,18 +8,16 @@ export default class VK {
     VK.instance = new VK_IO();
     VK.instance.setOptions(vkConfig);
 
-    this.setToken();
-    this.setSecureRequests()
+    VK.instance.setToken(vkConfig.token);
   }
 
-  setToken() {
-    VK.instance.on('serverTokenReady', function(_o) {
-      VK.instance.setToken(_o.access_token);
-    });
+  authStandalone() {
+    const auth = VK.instance.auth.standalone();
+    return auth.run();
   }
 
-  setSecureRequests() {
-    VK.instance.setSecureRequests(true);
+  setToken(token) {
+    VK.instance.setToken(token);
   }
 
   static set instance(instance) {
